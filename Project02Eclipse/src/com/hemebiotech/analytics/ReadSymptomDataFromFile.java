@@ -9,19 +9,22 @@ import java.util.HashMap;
  * Simple brute force implementation
  *
  */
-public class ReadSymptomDataFromFile implements ISymptomReader {
+public class ReadSymptomDataFromFile {
 
 	private String filepath;
 	
 	/**
 	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it, one per line
+	 * @param filepath of the file
 	 */
 	public ReadSymptomDataFromFile (String filepath) {
 		this.filepath = filepath;
 	}
-	
-	@Override
+
+	/**
+	 *	read file
+	 * @return hashmap of all symptoms and their numbers
+	 */
 	public HashMap<String, Integer> GetSymptoms() {
 		HashMap<String, Integer> result = new HashMap<>();
 		
