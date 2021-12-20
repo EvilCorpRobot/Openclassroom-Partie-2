@@ -9,7 +9,7 @@ import java.util.HashMap;
  * Simple brute force implementation
  *
  */
-public class ReadSymptomDataFromFile {
+public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filepath;
 	
@@ -25,6 +25,7 @@ public class ReadSymptomDataFromFile {
 	 *	read file
 	 * @return hashmap of all symptoms and their numbers
 	 */
+	@Override
 	public HashMap<String, Integer> GetSymptoms() {
 		HashMap<String, Integer> result = new HashMap<>();
 		
