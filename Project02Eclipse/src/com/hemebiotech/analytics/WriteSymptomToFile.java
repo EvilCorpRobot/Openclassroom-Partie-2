@@ -19,12 +19,12 @@ public class WriteSymptomToFile {
     }
 
     /**
-     * write and sort the hasmap
+     * write and sort the hashmap
      */
     public void write() {
         FileWriter writer = null;
         try {
-            writer = new FileWriter("result.out");
+            writer = new FileWriter("results.out");
             for (Map.Entry<String, Integer> entry : this.treeMap.entrySet()) {
                 writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
             }
