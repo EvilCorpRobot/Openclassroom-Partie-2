@@ -3,18 +3,17 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-/**
- * Simple brute force implementation
- *
- */
+
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filepath;
 	
 	/**
-	 * 
+	 * @author Theo Conte
 	 * @param filepath of the file
 	 */
 	public ReadSymptomDataFromFile (String filepath) {
@@ -22,31 +21,29 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	}
 
 	/**
-	 *	read file
-	 * @return hashmap of all symptoms and their numbers
+	 * reads a file and puts it in a list, ISymptomReader is the readSymptomDataFromFile inteface
+	 * @author Theo Conte
+	 * @return List of Symptoms
 	 */
 	@Override
-	public HashMap<String, Integer> GetSymptoms() {
-		HashMap<String, Integer> result = new HashMap<>();
-		
+	public List<String> getSymptoms() {
+
+		List<String> result = new ArrayList<>();
 		if (filepath != null) {
-			try {
-				BufferedReader reader = new BufferedReader (new FileReader(filepath));
+			// load the file into memory
+			try (BufferedReader reader = new BufferedReader (new FileReader(filepath))) {
 				String line = reader.readLine();
-				
+				// reads line by line is added to the list
 				while (line != null) {
-					if (result.containsKey(line)) {
-						result.replace(line, (result.get(line) + 1));
-					} else {
-						result.put(line, 1);
-					}
+
+					result.add(line);
 					line = reader.readLine();
 				}
-				reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
+
 		
 		return result;
 	}

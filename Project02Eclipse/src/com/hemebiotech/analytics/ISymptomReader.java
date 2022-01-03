@@ -1,9 +1,10 @@
 package com.hemebiotech.analytics;
 
 import java.util.HashMap;
+import java.util.List;
 
 public interface ISymptomReader {
 
-    HashMap<String, Integer> GetSymptoms ();
+    List<String> getSymptoms ();
 
 }
