@@ -7,6 +7,7 @@ import java.util.Map;
 public class WriteSymptomToFile implements ISymptomWriter{
     private String filename;
     /**
+     * @author Theo Conte
      * @param filename to file path
      */
     public WriteSymptomToFile (String filename) {
@@ -14,6 +15,7 @@ public class WriteSymptomToFile implements ISymptomWriter{
     }
 
     /**
+     * @author Theo Conte
      * write and sort the map this class has for ISymptomWriter interface
      */
     @Override
