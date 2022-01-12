@@ -40,7 +40,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
 
 		
 		return result;
