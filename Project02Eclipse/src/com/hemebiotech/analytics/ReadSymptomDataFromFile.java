@@ -29,9 +29,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	public List<String> getSymptoms() {
 
 		List<String> result = new ArrayList<>();
-		if (filepath != null) {
-			// load the file into memory
-			try (BufferedReader reader = new BufferedReader (new FileReader(filepath))) {
+		try (BufferedReader reader = new BufferedReader (new FileReader(filepath))) {
 				String line = reader.readLine();
 				// reads line by line is added to the list
 				while (line != null) {
