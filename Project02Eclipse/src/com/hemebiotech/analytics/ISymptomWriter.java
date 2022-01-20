@@ -6,7 +6,11 @@ import java.util.Map;
  *ISymptomWriter interface
  */
 public interface ISymptomWriter {
-
+    /**
+     * @author Theo Conte
+     * @param map
+     * write and sort the map this class has for ISymptomWriter interface
+     */
     public void write(Map<String, Integer> map);
 
 }

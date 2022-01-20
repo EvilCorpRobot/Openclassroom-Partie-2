@@ -5,17 +5,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class DefaultSymptomCounter implements ISymptomCounter{
-    /**
-     *Take the list and convert it to a map this class has for ISymptomCounter interface
-     * @author Theo Conte
-     * @param list
-     * @return Map of Symptoms
-     */
+
     @Override
     public Map<String, Integer> count(List<String> list) {
-        // Create a treeMap
+        // Create a treeMap to sort alphabetically
         Map<String, Integer> result = new TreeMap<>();
-        // iterate the list
         for (String s : list) {
             // if in the list the character string is contained in the Map then that adds more 1
             if (result.containsKey(s)) {

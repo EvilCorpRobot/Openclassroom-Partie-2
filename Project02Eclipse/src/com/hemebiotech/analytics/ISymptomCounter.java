@@ -1,6 +1,4 @@
 package com.hemebiotech.analytics;
-
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,5 +8,11 @@ import java.util.Map;
  */
 public interface ISymptomCounter {
 
+    /**
+     *Take the list and convert it to a map this class has for ISymptomCounter interface
+     * @author Theo Conte
+     * @param list
+     * @return Map of Symptoms
+     */
     public Map<String, Integer> count(List<String> list);
 }

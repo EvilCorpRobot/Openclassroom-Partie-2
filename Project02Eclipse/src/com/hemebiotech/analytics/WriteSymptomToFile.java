@@ -14,16 +14,10 @@ public class WriteSymptomToFile implements ISymptomWriter{
         this.filename = filename;
     }
 
-    /**
-     * @author Theo Conte
-     * write and sort the map this class has for ISymptomWriter interface
-     */
+
     @Override
     public void write(Map<String, Integer> map) {
-        // created the file with the filename attribute
         try (FileWriter writer = new FileWriter(this.filename)) {
-
-            // iterate the map to entry and write the key and value to the output file
             for (Map.Entry<String, Integer> entry : map.entrySet()) {
                 writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
             }
